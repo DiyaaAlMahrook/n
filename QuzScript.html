@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Text Area</h1>
+	<textarea cols="50" rows="10" id="TA" maxlength="100"></textarea><span id="TAS">100</span><br><br><br>
+	<h1>Password</h1>
+	<input id="pass" type="password" name="pass"><span><button id="but"></button></span>
+	<br><br><br>
+	<h1 id="">Live Text</h1>
+	<input id="tt" type="text" name="">
+	<p id="tip"></p><br><br><br>
+	<h1>Upper Case</h1>
+	<input id="tt2" type="text" name="">
+	<p id="tip2"></p>
+	
+	<script type="text/javascript">
+		document.getElementById('TA').style.length;
+		document.getElementById('TA').oninput = function textArea() {
+			document.getElementById('TAS').innerHTML = 100 - document.getElementById('TA').value.length;
+		}
+
+		document.getElementById('but').onclick = function n() {
+			if (document.getElementById('but').innerHTML = 'show'){
+				document.getElementById('but').innerHTML = 'hid' ;
+				document.getElementById('pass').type = 'text' ;
+				} else {
+				document.getElementById('but').innerHTML = 'show' ;
+				document.getElementById('pass').type = 'password' ;
+				}
+		}
+
+		document.getElementById('tt').oninput = function NAME() {
+			document.getElementById('tip').innerHTML = document.getElementById('tt').value;
+		}
+
+		document.getElementById('tt2').oninput = function namr (){
+			document.getElementById('tip2').innerHTML = document.getElementById('tt2').value;
+			document.getElementById('tip2').style.textTransform = 'capitalize';
+		}
+
+		var arr = = [];
+
+
+arr[0] = "a";
+
+arr[1] ="b":
+
+
+
+arr.foo="c";
+
+
+alert(arr.length);
+
+	</script>
+
+</body>
+</html>
