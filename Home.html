@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	}
+
+	body{
+	    width: 100%;
+	    max-width: 1400px;
+	    display: block;
+	    margin: auto;
+	    min-height: 100vh;
+	    background: #191919;
+	    font-family: sans-serif;
+	}
+
+	.navbar{
+	    width: 100%;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    z-index: 9;
+	    background: #1a1a1a;
+	}
+
+	.link-group{
+	    list-style: none;
+	    display: flex;
+	}
+
+	.link a{
+	    color: #fff;
+	    opacity: 0.5;
+	    text-decoration: none;
+	    text-transform: capitalize;
+	    padding: 10px 30px;
+	    margin: 0 20px;
+	    line-height: 80px;
+	    transition: .5s;
+	    font-size: 20px;
+	}
+
+	.link a:hover, .link.active a{
+	    opacity: 1;
+	}
+	/* home section */
+	.home-section{
+	    width: 100%;
+	    height: 100vh;
+	    padding: 0 150px;
+	    display: flex;
+	    align-items: center;
+	    position: relative;
+	    top: 0;
+	    transition: 1s;
+	}
+
+	.hero-heading{
+	    color: #fff;
+	    font-size: 120px;
+	    text-transform: capitalize;
+	    font-weight: 300;
+	}
+
+	.home-img{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    height: 100vh;
+	    width: 50%;
+	    object-fit: cover;
+	    opacity: 0.2;
+	}
+
+	* project-section */
+
+.project-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+}
+
+.project-heading{
+    font-size: 100px;
+    background: #252525;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+}
+
+.project-card{
+    height: 400px;
+    position: relative;
+}
+
+.project-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.project-content{
+    position: relative;
+    padding: 40px;
+    color: #fff;
+    transition: .5s;
+    opacity: 0;
+}
+
+.project-title{
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 300;
+}
+
+.project-info{
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.project-btn-grp{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.project-btn{
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 18px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project-btn.live{
+    background: none;
+    border: 2px solid #fff;
+}
+
+.project-card:hover .project-img{
+    filter: blur(20px);
+}
+
+.project-card:hover .project-content{
+    opacity: 1;
+}
+
+/* about-section */
+
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 0;
+    top: 0;
+    transition: 1s;
+}
+
+.about{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 65%;
+    grid-gap: 40px;
+}
+
+.about-img-container{
+    position: relative;
+}
+
+.about-info{
+    color: #fff;
+    opacity: 0.6;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.about-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0.7;
+}
+
+.download-cv-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .5s;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.download-cv-btn:hover{
+    background: #000;
+}
+
+.about-img:hover{
+	opacity: 1;
+}
+/* skills */
+
+.skill-section{
+    position: relative;
+    margin: 100px 0;
+}
+
+.heading{
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+
+.skills-container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+    color: #fff;
+}
+
+.skill-card{
+    position: relative;
+}
+
+.skill-img{
+    display: block;
+    margin: auto;
+    height: 200px;
+}
+
+.skill-name{
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 30px 0 20px;
+}
+
+.skill-info{
+    text-align: center;
+    opacity: 0.5;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.skill-level{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50%;
+    border: 10px solid;
+}
+
+.skill-card:nth-child(1) .skill-level{
+    background: #ff4f4f28;
+    border-color: #ff4f4f;
+    color: #ff4f4f;
+}
+
+.skill-card:nth-child(2) .skill-level{
+    background: #4fa0ff28;
+    border-color: #4fa0ff;
+    color: #4fa0ff;
+}
+
+.skill-card:nth-child(3) .skill-level{
+    background: #ffed4f28;
+    border-color: #ffed4f;
+    color: #ffed4f;
+}
+
+.skill-card:nth-child(4) .skill-level{
+    background: #52ff4f28;
+    border-color: #52ff4f;
+    color: #52ff4f;
+}
+
+.skill-card:nth-child(5) .skill-level{
+    background: #4fdfff28;
+    border-color: #4fdfff;
+    color: #4fdfff;
+}
+
+/* timeline */
+
+.timeline{
+    display: block;
+    width: 80%;
+    margin: 150px auto;
+}
+
+.timeline .heading{
+    margin-bottom: 150px;
+}
+
+.card{
+    width: 45%;
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    margin: -80px 0;
+    position: relative;
+    background: #f00;
+}
+
+.card:nth-child(even){
+    margin-left: auto;
+}
+
+.card:nth-child(even):before{
+    content: '';
+    position: absolute;
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 5px solid #191919;
+    border-radius: 50%;
+}
+
+.card:nth-child(even):after{
+    content: '';
+    position: absolute;
+    left: -8.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7%;
+    height: 2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.card:nth-child(odd):before{
+    content: '';
+    position: absolute;
+    right: -13%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 5px solid #191919;
+    border-radius: 50%;
+}
+
+.card:nth-child(odd):after{
+    content: '';
+    position: absolute;
+    right: -8.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7%;
+    height: 2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.card:nth-child(2), .card:nth-child(2):before{
+    background: #ff4f4f;
+}
+.card:nth-child(3), .card:nth-child(3):before{
+    background: #ffb84f;
+}
+.card:nth-child(4), .card:nth-child(4):before{
+    background: #3dca5c;
+}
+.card:nth-child(5), .card:nth-child(5):before{
+    background: #565252;
+}
+.card:nth-child(6), .card:nth-child(6):before{
+    background: #4fa0ff;
+}
+
+.card:nth-child(even) .card-body:before{
+    content: '';
+    position: absolute;
+    left: -12%;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    border: 1px dashed #fff;
+    z-index: -1;
+}
+
+.card-title{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+#h100 {
+	color: silver;
+	text-align: center;
+	font-size: 100px;
+}
+
+.contact-section{
+    top: 0;
+    transition: 1s;
+    padding: 100px 150px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+}
+
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #fff;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+	::placeholder{
+	    color: #fff;
+	}
+
+	#msg{
+	    height: 280px;
+	    resize: none;
+	    font-family: sans-serif;
+	}
+
+	.form-submit-btn{
+	    background: #ff4f4f;
+	    color: #fff;
+	    text-transform: capitalize;
+	    padding: 15px 40px;
+	    display: block;
+	    margin: auto;
+	    border: none;
+	    border-radius: 10px;
+	    cursor: pointer;
+	}
+
+	.map{
+	    width: 100%;
+	    height: 100%;
+	    padding: 10px;
+	    border: 2px solid #fff;
+	    background: rgba(255, 255, 255, 0.2);
+	    border-radius: 10px;
+	}
+
+	.map iframe{
+	    width: 100%;
+	    height: 100%;
+	    border-radius: 5px;
+	}
+
+	footer {
+        background-color: #8A2BE2;
+        text-align: center;
+      }
+      footer p {
+        padding: 20px;
+        font-size: 15px;
+        color: #fff;
+        font-weight: 800;
+        margin: 0px;
+      }
+      footer span {
+        color: #10cab7;
+      }
+
+       #MyBtn{
+       	opacity: 0.2;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      width: 50px;
+      height: 50px;
+      outline: none;
+      background-color: #0000FF;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border: 1px;
+      font-size: 20px;
+    }
+
+    #MyBtn:hover{
+      transition: 0.3s;
+      opacity: 0.8;
+    }
+    #img101{
+    	border-radius:  50px;
+    	position: fixed;
+    }
+
+    #MyBtn1{
+      position: fixed;
+      bottom: 20px;
+     
+      z-index: 99;
+      width: 50px;
+      height: 50px;
+      outline: none;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border: 1px;
+      font-size: 20px;
+    }
+
+    #MyBtn1:hover{
+      transition: 0.3s;
+      opacity: 0.8;
+    }
+
+	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<nav class="navbar">
+    <ul class="link-group">
+        <li class="link active"><a href="#">Home</a></li>
+        <li class="link"><a href="#div2">Projects</a></li>
+        <li class="link"><a href="#div3">About</a></li>
+        <li class="link"><a href="#div4">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="home-section active">
+    <h1 class="hero-heading">hello, i am <br> Diyaa</h1>
+    <img src="home.png" class="home-img" alt="">
+</section>
+<br><br><br><br><br>
+<!-- project section -->
+<div id="div2">
+<section class="project-section">
+    <h1 class="project-heading">some of my projects</h1>
+    <div class="project-container">
+        <div class="project-card">
+            <img src="project-1.png" class="project-img" alt="">
+            <div class="project-content">
+                <h1 class="project-title">project 01</h1>
+                <p class="project-info">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit vitae delectus cumque repudiandae aliquam optio accusamus natus nobis! Nam, sunt?
+                </p>
+                <div class="project-btn-grp">
+                    <button class="project-btn github">github repo</button>
+                    <button class="project-btn live">see live</button>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="project-2.png" class="project-img" alt="">
+            <div class="project-content">
+                <h1 class="project-title">project 02</h1>
+                <p class="project-info">
+                    Software development is the process of conceiving, specifying, designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications
+                </p>
+                <div class="project-btn-grp">
+                    <button class="project-btn github">github repo</button>
+                    <button class="project-btn live">see live</button>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="project-3.png" class="project-img" alt="">
+            <div class="project-content">
+                <h1 class="project-title">project 03</h1>
+                <p class="project-info">
+                    Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network).[1] Web development can range from developing a simple single static page of plain text 
+                </p>
+                <div class="project-btn-grp">
+                    <button class="project-btn github">github repo</button>
+                    <button class="project-btn live">see live</button>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="project-4.png" class="project-img" alt="">
+            <div class="project-content">
+                <h1 class="project-title">project 04</h1>
+                <p class="project-info">
+                    Multimedia is a form of communication that combines different content forms such as text, audio, images, animations, or video into a single interactive presentation,
+                </p>
+                <div class="project-btn-grp">
+                    <button class="project-btn github">github repo</button>
+                    <button class="project-btn live">see live</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<section class="project-section active">
+<div id="div3">
+	<!-- about section -->
+<section class="about-section">
+	<h1 id="h100">About Me </h1>
+    <div class="about">
+        <div class="about-img-container">
+            <img src="home.png" class="about-img" alt="">
+            <button class="download-cv-btn">downlaod cv</button>
+        </div>
+        <p class="about-info">Software development is the process of conceiving, specifying, designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks, or other software components. Software development involves writing and maintaining the source code, but in a broader sense, it includes all processes from the conception of the desired software through to the final manifestation of the software, typically in a planned and structured process .<br>Software can be developed for a variety of purposes. The three most common purposes[according to whom?] are: to meet specific needs of a specific client or organization (known as custom software),[citation needed] to meet a perceived need of some set of potential users (known as commercial software ),[</p>
+    </div>
+</section>
+
+<!-- skills -->
+<div class="skill-section">
+    <h1 class="heading">skills</h1>
+    <div class="skills-container">
+        <div class="skill-card">
+            <img src="html.png" class="skill-img" alt="">
+            <div class="skill-level">98%</div>
+            <h1 class="skill-name">HTML</h1>
+            <p class="skill-info">The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. </p>
+        </div>
+        <div class="skill-card">
+            <img src="css.png" class="skill-img" alt="">
+            <div class="skill-level">85%</div>
+            <h1 class="skill-name">CSS</h1>
+            <p class="skill-info">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language </p>
+        </div><div class="skill-card">
+            <img src="js.png" class="skill-img" alt="">
+            <div class="skill-level">83%</div>
+            <h1 class="skill-name">JavaScript</h1>
+            <p class="skill-info">JavaScript (/ˈdʒɑːvəˌskrɪpt/),[10] often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, !</p>
+        </div><div class="skill-card">
+            <img src="nodejs.png" class="skill-img" alt="">
+            <div class="skill-level">90%</div>
+            <h1 class="skill-name">NodeJS</h1>
+            <p class="skill-info">Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. </p>
+        </div><div class="skill-card">
+            <img src="reactjs.png" class="skill-img" alt="">
+            <div class="skill-level">87%</div>
+            <h1 class="skill-name">Reactjs</h1>
+            <p class="skill-info">React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library[3] for building user interfaces based on UI components.</p>
+        </div>
+    </div>
+</div>
+</div>
+  <a id="MyBtn1" href="https://accounts.google.com/SignOutOptions?hl=ar&continue=https://mail.google.com&service=mail"><img id="img101" src="download.png" width="40" height="40"></a> 
+<button id="MyBtn"> ^ </button>
+<!-- timeline -->
+<div class="timeline">
+    <h1 class="heading">education and experience</h1>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">2002-2006</h1>
+            <p class="card-detail">Starting from the date of my birth March 26 of the year 2002.
+			My childhood began where I was born in Al-Aqsa Martyrs Hospital - Deir Al-Balah and grew up in the alleys and alleys of Al-Nuseirat camp, and in 2005 I moved to live in the city of Tel Al-Hawa in Gaza, and two years later I returned to my camp (Nuseirat).</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">2007-2012</h1>
+            <p class="card-detail">I started studying in the primary stage, which was filled with the happiest childhood times, which passed quickly, but with my young age, the war passed on the first war in 2008 and the 2012 war on Gaza in which its people witnessed the most difficult times and massacres by the occupation.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">2013-2016</h1>
+            <p class="card-detail">I started studying in the middle school, which was the happiest time of my life. I had a large number of friends in the school and the neighborhood. Despite those happy times, the occupation is still waging its wars on Gaza, and the 2014 war was the most powerful war to pass on Gaza, but our resisters repelled the occupation with every courageous force.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">2017-2019</h1>
+            <p class="card-detail">At this stage, I started studying at Shuhada Al-Nuseirat Secondary School. This stage was the beginning of youth and maturity, and it was a very beautiful period for me, as any young man. Messi and obtained a high school degree in 2020 with a grade of 75% for the scientific stream.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">2020- Until now</h1>
+            <p class="card-detail">I started the undergraduate stage at the Islamic University - Gaza at the Faculty of Information Technology, specializing in software development, the specialization that many recommended to me, the most important of which is my father, the engineer, who studied at the same university 28 years ago. From all over the Gaza Strip (Gaza - Khan Younis - Rafah) .</p>
+        </div>
+    </div>
+</div>
+
+<div id="div4">
+    <br><br><br>
+	<h1 id="h100">Contact</h1>
+    <br><br><br>
+	<!-- contact section -->
+<section class="contact-section">
+    <form class="contact-form">
+        <input type="text" name="name" id="name" autocomplete="off" placeholder="name">
+        <input type="text" name="email" id="email" autocomplete="off" placeholder="email">
+        <textarea name="msg" id="msg" placeholder="message" autocomplete="off"></textarea>
+        <button type="submit" class="form-submit-btn">contact</button>
+    </form>
+    <!-- map -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27883951.122950215!2d34.390197400000005!3d31.447100200000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1sar!2s!4v1640026254050!5m2!1sar!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+</div>
+<footer>
+      <p>CopyRight © 2021-<span>ENG : </span>Diyaa Al Mahrook</p>
+      <div>
+        <img id="img100" src="Facebook.png" alt="" />
+        <img id="img100" src="Google_.png" alt="" />
+        <img id="img100" src="LinkedIn.png" alt="" />
+        <img id="img100" src="Pinterest.png" alt="" />
+        <img id="img100" src="YouTube.png" alt="" />
+        <img id="img100" src="twitter.png" alt="" />
+      </div>
+    </footer>
+    <div class="scroll-to-top" style="display: block" id="top">
+      <a href="#top"><span></span></a>
+    </div>
+    <!-- butoon Scroll to top -->
+    <script type="text/javascript">
+    	// buttom
+       let myButton = document.getElementById('MyBtn');
+    window.onscroll = function (){
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+        myButton.style.display = 'block';
+      }else{
+        myButton.style.display = 'none';
+      }
+    }
+    myButton.addEventListener('click' , () =>{
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    })
+
+  
+    </script>
+</body>
+</html>
